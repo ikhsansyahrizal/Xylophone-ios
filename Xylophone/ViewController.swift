@@ -17,34 +17,22 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func keyPressedC(_ sender: UIButton) {
-        playSound(sound: "C")
+    
+    @IBAction func ButtonPressed(_ sender: UIButton) {
+        
+        switch sender.currentTitle {
+        case "C" : playSound(sound: "C")
+        case "D" : playSound(sound: "D")
+        case "E" : playSound(sound: "E")
+        case "F" : playSound(sound: "F")
+        case "G" : playSound(sound: "G")
+        case "A" : playSound(sound: "A")
+        case "B" : playSound(sound: "B")
+        default : break
+        }
+        
     }
     
-    
-    @IBAction func keyPressedD(_ sender: UIButton) {
-        playSound(sound: "D")
-    }
-    
-    @IBAction func keyPressedE(_ sender: UIButton) {
-        playSound(sound: "E")
-    }
-    
-    @IBAction func keyPressedF(_ sender: UIButton) {
-        playSound(sound: "F")
-    }
-    
-    @IBAction func keyPressedG(_ sender: UIButton) {
-        playSound(sound: "G")
-    }
-    
-    @IBAction func keyPressedA(_ sender: UIButton) {
-        playSound(sound: "A")
-    }
-    
-    @IBAction func keyPressedB(_ sender: UIButton) {
-        playSound(sound: "B")
-    }
     
     func playSound(sound: String) {
         guard let path = Bundle.main.path(forResource: sound, ofType:"wav") else {return}
